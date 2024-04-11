@@ -127,3 +127,24 @@ a span{
 #equals{
     background-color: #E58C8A;
 }
+
+@media screen and (max-width:300px) {
+    .outer{
+        width: 90%;
+    }
+
+    .output-window{
+        width: 110%;
+    }
+
+    .buttons{
+        width: 110%;
+        height: 65vmin;
+        padding-left: 6vmin;
+    }
+
+    .hit{
+        width: 13vmin;
+        height: 9vmin;
+    }
+}
