@@ -95,6 +95,9 @@ body{
     align-items: center;
     cursor: pointer;
     background-color: #f2cac8;
+}
+
+.hit:hover{
     -webkit-box-shadow: 1px 1px 10px 0px rgba(255,255,255,0.92);
     -moz-box-shadow: 1px 1px 10px 0px rgba(255,255,255,0.92);
     box-shadow: 1px 1px 10px 0px rgba(255,255,255,0.92);
