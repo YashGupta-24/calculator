@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #E5C687;
+}
+
+.outer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-shadow: 0 1px 0 #000;
+  
+    --border-angle: 0turn;
+    --main-bg: conic-gradient(
+      from var(--border-angle),
+      #213,
+      #112 5%,
+      #112 60%,
+      #213 95%
+    );
+  
+    border: solid 5px transparent;
+    border-radius: 1em;
+    --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+  
+    background: 
+        var(--main-bg) padding-box,
+        var(--gradient-border) border-box, 
+        var(--main-bg) border-box;
+    
+    background-position: center center;
+
+    animation: bg-spin 3s linear infinite;
+}
+@keyframes bg-spin {
+    to {
+    --border-angle: 1turn;
+    }
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+  }
+
+.heading{
+    color: #fdbb75;
+    font-size: 6vmin;
+    margin-bottom: 10px;
+}
+
+.output-window{
+    background-color: #E5C687;
+    height: 12vmin;
+    width: 60vmin;
+    margin-bottom: 10px;
+    border: 3px solid #c36b85;
+    border-radius: 2vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    color: black;
+}
+
+.buttons{
+    height: 50vmin;
+    width: 58vmin;
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    padding-left: 2vmin;
+}
+
+.hit{
+    border-radius: 10%;
+    height: 6vmin;
+    width: 10vmin;
+    margin: 1.2vmin;
+    border: none;
+    font-size: 5vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #f2cac8;
+    -webkit-box-shadow: 1px 1px 10px 0px rgba(255,255,255,0.92);
+    -moz-box-shadow: 1px 1px 10px 0px rgba(255,255,255,0.92);
+    box-shadow: 1px 1px 10px 0px rgba(255,255,255,0.92);
+}
+
+footer{
+    height: 6vmin;
+    font-size: 4vmin;
+    margin: 2vmin;
+    width: 90%;
+    text-align: center;
+}
+
+a{
+    color: #08f;
+    text-decoration: none;
+}
+
+a span{
+    font-weight: 700;
+}
+
+#clear,#backspace{
+    background-color: #D5A021;
+}
+
+#equals{
+    background-color: #E58C8A;
+}
