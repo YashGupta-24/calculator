@@ -139,16 +139,29 @@ a span{
 
     .output-window{
         width: 110%;
+        height: 17vmin;
     }
 
     .buttons{
-        width: 110%;
-        height: 65vmin;
+        width: 116%;
+        height: 85vmin;
         padding-left: 4vmin;
+        margin-top: 10px;
     }
 
     .hit{
-        width: 13vmin;
+        width: 15vmin;
+        height: 10vmin;
+    }
+}
+
+@media screen and (max-width:200px) {
+    .hit{
+        width: 12vmin;
         height: 9vmin;
+    }
+
+    .buttons{
+        margin-top: 8px;
     }
 }
