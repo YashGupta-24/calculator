@@ -3,6 +3,7 @@ let output=document.querySelector(".output");
 let type;
 let result=[];
 let outputResult=0;
+let decimal = document.querySelector('#point');
 buttons.forEach((button)=>{
     button.addEventListener("click",()=>{
         type=button.getAttribute("id");
@@ -10,41 +11,55 @@ buttons.forEach((button)=>{
         switch(type){
             case 'clear':
                 result=[""];
+                decimal.disabled=false;
             break;
 
             case 'percent':
-                outputResult=Number(result.join(``))/100;
+                outputResult=(Number(result.join(``)))*100/10000;
                 preview();
             break;
 
             case 'backspace':
+                if(result[result.length-1]=='.'){
+                    decimal.disabled=false;
+                }
+                else
+                    decimal.disabled=true;
                 result.pop();
             break;
 
             case 'divide':
                 result.push('/');
+                decimal.disabled=false;
             break;
                 
             case 'multiply':
                 result.push('*');
+                decimal.disabled=false;
             break;
                 
             case 'minus':
                 result.push('-');
+                decimal.disabled=false;
             break;
                 
             case 'plus':
-                result.push('+')
+                result.push('+');
+                decimal.disabled=false;
             break;
                             
             case 'equals':
                 outputResult=eval(String(result.join(``)));
                 preview();
+                if(output.innerText%1==0)
+                decimal.disabled=false;
+                else
+                decimal.disabled=true;
             break;    
 
             case 'point':
-                if(output.innerText%1==0)
                 result.push('.');
+                decimal.disabled=true;
             break;
 
             case 'doubleZero':
