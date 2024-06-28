@@ -7,7 +7,6 @@ let decimal = document.querySelector('#point');
 buttons.forEach((button)=>{
     button.addEventListener("click",()=>{
         type=button.getAttribute("id");
-
         switch(type){
             case 'clear':
                 result=[""];
